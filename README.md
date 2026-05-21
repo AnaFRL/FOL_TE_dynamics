@@ -1,2 +1,2 @@
 # FOL_TE_dynamics
-Here is the code used for the analysis performed during my PhD
+Here is the code used in our article "Developmentally regulated transposon activation promotes adaptability in a clonally propagating fungal pathogen"
