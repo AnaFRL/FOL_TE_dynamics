@@ -12,7 +12,7 @@
 # Run FastQC again before mapping. If everything is correct, continue with the pipeline.
 
 # Create file variables
-sample_list="path" # A list containing sample names. Example can be found in 
+sample_list="path" # A list containing sample names. Example can be found in files/Example_sample_list.txt
 line=$(head -n $SLURM_ARRAY_TASK_ID $sample_list| tail -1)
 file_name="$(echo $line | awk '{print $1}')"
 sample_name="$(echo $file_name | awk -F "_" '{print $1}')"
