@@ -18,9 +18,9 @@ file_name="$(echo $line | awk '{print $1}')"
 sample_name="$(echo $file_name | awk -F "_" '{print $1}')"
 
 # Create directory variables
-clean_samples_dir="/data/ana/Sequencing_Novogene/YP_YC_DNAseq_analysis/input"
-output_dir="/data/ana/Sequencing_Novogene/YP_YC_DNAseq_analysis/output"
-logfile_dir="/data/ana/Sequencing_Novogene/YP_YC_DNAseq_analysis/logfiles"
+clean_samples_dir=""
+output_dir=""
+logfile_dir=""
 
     ## Mapping to the reference genome using BWAmem
 
@@ -29,7 +29,7 @@ source /home/ana/anaconda3/etc/profile.d/conda.sh
 conda activate bwa_env
 
 # BWA-mem variables
-refseq="/data/ana/Sequencing_Novogene/YP_YC_DNAseq_analysis/input/foxy3_bwa_index"
+refseq="" # BWA index from the reference genome
 forward_bwa="${clean_samples_dir}/${file_name}_1_cleanP.fq.gz"
 reverse_bwa="${clean_samples_dir}/${file_name}_2_cleanP.fq.gz"
 sam_file="${output_dir}/${file_name}.bwa.sam"
@@ -231,7 +231,7 @@ conda deactivate
     ## Picard CollectRawWgsMetrics (Collect whole genome sequencing-related metrics.  This tool computes metrics that are useful for evaluating coverage and performance of whole genome sequencing experiments. These metrics include the percentages of reads that pass minimal base- and mapping- quality filters as well as coverage (read-depth) levels)
 
 # Reference genome variable
-reference_genome="/data/ana/Sequencing_Novogene/YP_YC_DNAseq_analysis/input/fusox_3_1_AssemblyScaffolds.fasta"
+reference_genome=""
 
 # Activate conda environment
 conda activate picard_env
