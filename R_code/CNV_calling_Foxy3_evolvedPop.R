@@ -249,9 +249,11 @@ ggplot(data=bed.t, aes(x=chr_start/1000000, y=cov, group=sample, color=sample)) 
           subtitle = "Median every 10kb per Scaffold, each sample normalized by its median, normalized to the WT") +
   theme(axis.text.x = element_text(size=6),
         strip.text.x = element_text(size = 8),
-        axis.text.y = element_text(size=6)) +
+        axis.text.y = element_text(size=6),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank()) +
   scale_x_continuous(breaks = function(x) seq(floor(min(x)), ceiling(max(x)), by = 1)) +
-  scale_y_continuous(limits = c(0, 3), breaks = seq(0, 3, by = 1)) +
+  scale_y_continuous(limits = c(0, 2.5), breaks = seq(0, 2.5, by = 1)) +
   scale_color_manual(values = c(
     "SRR7690004_cov" = "black",  
     "YC1_cov" = "#90BFF9", "YC2_cov" = "#90BFF9", "YC3_cov" = "#90BFF9", "YC4_cov" = "#90BFF9", "YC5_cov" = "#90BFF9",  
